@@ -1,11 +1,21 @@
-Here m and n are dimensions of the matrices
+Here m*n and n*p are dimensions of the matrices
 
 1. Dense matrix
 
-	Time complexity = O(n^3)
-	Space complexity = O(n^2)
+	Flops = 2*m*n*p
+	Space complexity = O(m*n)
 
 2. Banded matrix
 
-	Time complexity = O(m^2 * n)
-	
+	Flops = 2*(p1+q1+1)*(p2+q2+1)*p
+	Space complexity = O(m*n)
+
+3. Coordinate Storage Format
+
+	Flops = 2*m*n*p
+	Space complexity = O(m*n)
+
+4. Compressed Sparse Row
+
+	Flops = 2*m*n*p
+	Space complexity = O(m*n)

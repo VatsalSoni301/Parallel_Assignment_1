@@ -6,7 +6,7 @@ int maximumVal = 100;
 int main()
 {
 	int n;
-	cout<<"enter the dimension of the matrix n*n: ";
+	cout<<"Enter the dimension of the matrix n*n: ";
 	cin>>n;
 	double A[n][n],Acopy[n][n];
 	double B[n];
@@ -19,7 +19,7 @@ int main()
 			Acopy[i][j]=A[i][j];
 		}
 	}
-	cout<<endl<<endl<<"matrix A:"<<endl<<endl;
+	cout<<endl<<endl<<"Matrix A:"<<endl<<endl;
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)
@@ -33,7 +33,7 @@ int main()
 		B[i] = rand() % maximumVal + 1;
 	}
 
-	cout<<endl<<endl<<"vector B:"<<endl<<endl;
+	cout<<endl<<endl<<"Vector B:"<<endl<<endl;
 	for(i=0;i<n;i++)
 		cout<<B[i]<<endl;
 
@@ -52,7 +52,7 @@ int main()
 			}
 		}
 	}
-	cout<<endl<<endl<<"matrix A after LU factorization:"<<endl<<endl;
+	cout<<endl<<endl<<"Matrix A after LU factorization:"<<endl<<endl;
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)
@@ -87,7 +87,7 @@ int main()
 		}
 	}
 	// Printing L and U
-	cout<<endl<<endl<<"matrix L:"<<endl<<endl;
+	cout<<endl<<endl<<"Matrix L:"<<endl<<endl;
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)
@@ -96,7 +96,7 @@ int main()
 		}
 		cout<<endl;
 	}
-	cout<<endl<<endl<<"matrix U:"<<endl<<endl;
+	cout<<endl<<endl<<"Matrix U:"<<endl<<endl;
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)
@@ -138,11 +138,11 @@ int main()
 		x[i] = temp/U[i][i];
 	}
 
-	cout<<endl<<"vector t:"<<endl<<endl;
+	cout<<endl<<"Vector t:"<<endl<<endl;
 	for(i=0;i<n;i++)
 		cout<<t[i]<<endl;
 
-	cout<<endl<<"vector x:"<<endl<<endl;
+	cout<<endl<<"Vector x:"<<endl<<endl;
 	for(i=0;i<n;i++)
 		cout<<x[i]<<endl;
 
@@ -163,7 +163,7 @@ int main()
 			}
 		}
 	}
-	cout<<endl<<"print ax-b vector"<<endl<<endl;
+	cout<<endl<<"Print ax-b vector"<<endl<<endl;
 	for(i=0;i<n;i++)
 	{
 		C[i][0] = abs(C[i][0]-B[i]);

@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int maximumVal = 100;
+int maximumVal = 10;
 
 int main()
 {
@@ -17,6 +17,11 @@ int main()
 	cout<<"For matrix A:"<<endl;
 	cout<<"Enter m,n,p and q: "<<endl;
 	cin>>m1>>n1>>p1>>q1;
+	if(p1+q1+1>m1)
+	{
+		cout<<"Cant fit into banded matrix";
+		return 1;
+	}
 	cout<<"Enter the elements of matrix A:"<<endl<<endl;
 
 	int A[m1][n1],temp;
@@ -40,6 +45,11 @@ int main()
 	cout<<"For matrix B:"<<endl;
 	cout<<"Enter m,n,p and q: "<<endl;
 	cin>>m2>>n2>>p2>>q2;
+	if(p2+q2+1>m2)
+	{
+		cout<<"Cant fit into banded matrix";
+		return 1;
+	}
 	cout<<"Enter the elements of matrix B:"<<endl<<endl;
 	
 	int B[p2+q2+1][n2];
@@ -97,7 +107,7 @@ int main()
 	
 	for(i=0;i<m1;i++)
 	{
-		for(j=0;j<n2;j++)
+		for(j=0;j<m2;j++)
 		{
 			for(k=0;k<n1;k++)
 			{
@@ -112,6 +122,17 @@ int main()
 					bkj = B[k-j+q2][j];
 
 				C[i][j] += (aik*bkj);
+
+				// if((p1+j)<i || (q1+i)<j || (p2+k)<j || (q2+k)<j)
+				// 	C[i][j] = 0;
+				// else 
+    //             {   
+    //                 // int bandindex1 = i - k + q1;
+    //                 // int bandindex2 = k - j + q2;
+
+    //                 // if(bandindex1>=0 && bandindex2>=0)
+    //                 	C[i][j] += A[i][j]*B[k][j]; 
+    //             }
 			}
 		}
 	}
@@ -121,7 +142,7 @@ int main()
 	{
 		for(j=0;j<n2;j++)
 		{
-			cout<<C[i][j]<<" ";
+			cout<<C[i][j]<<"     ";
 		}
 		cout<<endl;
 	}

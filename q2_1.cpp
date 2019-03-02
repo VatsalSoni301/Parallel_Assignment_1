@@ -44,7 +44,7 @@ int main()
 			}
 		}
 	}
-	cout<<endl<<endl<<"matrix A after LU factorization:"<<endl<<endl;
+	cout<<endl<<endl<<"Matrix A after LU factorization:"<<endl<<endl;
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)
@@ -79,7 +79,7 @@ int main()
 		}
 	}
 	
-	cout<<endl<<endl<<"matrix L:"<<endl<<endl;
+	cout<<endl<<endl<<"Matrix L:"<<endl<<endl;
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)
@@ -88,7 +88,7 @@ int main()
 		}
 		cout<<endl;
 	}
-	cout<<endl<<endl<<"matrix U:"<<endl<<endl;
+	cout<<endl<<endl<<"Matrix U:"<<endl<<endl;
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)

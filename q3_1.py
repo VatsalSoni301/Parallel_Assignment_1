@@ -28,6 +28,9 @@ def houseHold(A):
 	v = A1 - LA.norm(A1)*e1
 	
 	# print(v)
+	if np.dot(v.T,v)==0:
+		print("Dot product becomes zero")
+		exit(0)
 	beta = 2/np.dot(v.T , v)
 	
 	# z = v @ v.T

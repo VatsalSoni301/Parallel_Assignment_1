@@ -29,6 +29,9 @@ def houseHold(A,j):
 	
 	v = A1 - LA.norm(A1)*e1
 	# print(v)
+	if np.dot(v.T,v)==0:
+		print("Dot product becomes zero")
+		exit(0)
 	beta = 2/np.dot(v.T , v)
 	
 	# z = v @ v.T
@@ -87,7 +90,6 @@ for i in range(n):
 	b.append(random.randint(1,maximumVal))
 
 
-Acopy = copy.deepcopy(A)
 print("n=",n)
 print("m=",m)
 print("\nMatrix A \n")
@@ -108,6 +110,10 @@ R = QRDecomposition(A)
 
 print("\nMatrix R \n")
 print(R)
+
+if np.linalg.det(R)==0:
+	print("R Singular matrix found")
+	exit(0) 
 
 R_inv=inv(np.array(R))
 
@@ -139,7 +145,7 @@ R=R[0:m,0:m]
 x = [0]*m	
 x[m-1] = btemp[m - 1][0] / R[m - 1][m - 1]
 
-i = n - 2
+i = m - 2
 while i>=0:
 	x[i] = btemp[i][0]
 	for j in range(i+1,m):

@@ -30,6 +30,9 @@ def houseHold(A,j):
 	
 	v = A1 - LA.norm(A1)*e1
 	# print(v)
+	if np.dot(v.T,v)==0:
+		print("Dot product becomes zero")
+		exit(0)
 	beta = 2/np.dot(v.T , v)
 	
 	# z = v @ v.T
@@ -102,6 +105,10 @@ R = QRDecomposition(A)
 
 print("\nMatrix R\n")
 print(R)
+
+if np.linalg.det(R)==0:
+	print("R Singular matrix found")
+	exit(0) 
 
 R_inv=inv(np.array(R))
 # print(R_inv)
